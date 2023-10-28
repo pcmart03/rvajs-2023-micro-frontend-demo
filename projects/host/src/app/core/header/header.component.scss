@@ -1,0 +1,31 @@
+.header {
+  height: 50px;
+  background-color: indigo;
+  color: #FFFFFF;
+  width: 100vw;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+}
+
+.app-header-flex-parent {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  font-family: "Open Sans";
+}
+
+.app-header-title-bar {
+  display: flex;
+}
+
+.app-header-page {
+  display: flex;
+  align-items: center;
+}
+
+.authButtons {
+  padding: 0.5rem;
+}

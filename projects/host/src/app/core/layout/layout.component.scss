@@ -1,0 +1,16 @@
+.layout-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  header,
+  footer {
+    flex-shrink: 0;
+  }
+
+  main {
+    padding-top: 4rem;
+    min-height: calc(99vh - 6rem);
+    flex-grow: 1;
+  }
+}
