@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {filter, Observable, Subject} from "rxjs";
-import {MfEvent} from "./interfaces/mf-event.interface";
+import {MfEvent} from "./interfaces";
 
 @Injectable({
   providedIn: 'root'
