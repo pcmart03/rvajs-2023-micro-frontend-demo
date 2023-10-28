@@ -1,7 +1,6 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { initFederation } from '@angular-architects/module-federation';
 
-import { AppModule } from './app/app.module';
-
-
-platformBrowserDynamic().bootstrapModule(AppModule)
+initFederation('/assets/mf.manifest.json')
+  .catch(err => console.error(err))
+  .then(_ => import('./bootstrap'))
   .catch(err => console.error(err));
