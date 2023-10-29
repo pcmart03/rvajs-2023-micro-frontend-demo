@@ -5,7 +5,11 @@
       <h1 class="app-name">RVA.js Microfrontends</h1>
     </div>
   </host-header-content>
-
+  <main>
+    <section class="container">
+      <app-remote remote="profile" [dispatch]="eventBus.dispatch"/>
+    </section>
+  </main>
   <router-outlet></router-outlet>
 
   <host-footer-content appFooter> Version 1.0 </host-footer-content>

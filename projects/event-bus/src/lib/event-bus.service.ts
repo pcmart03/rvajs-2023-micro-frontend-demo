@@ -8,11 +8,13 @@ import {MfEvent} from "./interfaces";
 export class EventBusService {
   private events$ = new Subject<MfEvent>()
 
-  dispatch(event: MfEvent) {
+  dispatch = (event: MfEvent) => {
     this.events$.next(event);
   }
 
-  subscribeToEvents(eventTypes: string[] | null = null): Observable<MfEvent> {
-    return eventTypes ? this.events$.pipe(filter((event) => eventTypes.includes(event.type))) : this.events$.asObservable();
+  subscribeToEvents = (eventTypes: string[] | null = null): Observable<MfEvent> => {
+    return eventTypes
+      ? this.events$.pipe(filter((event) => eventTypes.includes(event.type)))
+      : this.events$.asObservable();
   }
 }
