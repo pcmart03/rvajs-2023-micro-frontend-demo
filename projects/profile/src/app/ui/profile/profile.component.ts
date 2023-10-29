@@ -1,11 +1,5 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, inject, Output} from '@angular/core';
-import {FormBuilder, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatButtonModule} from "@angular/material/button";
-import {MatDatepickerModule} from "@angular/material/datepicker";
-import {MatNativeDateModule} from "@angular/material/core";
-import {MatInputModule} from "@angular/material/input";
-import {CommonModule} from "@angular/common";
+import {FormBuilder, Validators} from "@angular/forms";
 import {ApiService} from "../../data-access/api-service/api.service";
 import {Profile} from "../../interfaces/profile.interface";
 import {take} from "rxjs";
