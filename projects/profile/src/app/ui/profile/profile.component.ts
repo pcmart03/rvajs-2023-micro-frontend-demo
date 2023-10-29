@@ -11,17 +11,6 @@ import {Profile} from "../../interfaces/profile.interface";
 import {take} from "rxjs";
 
 @Component({
-  standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatDatepickerModule,
-    MatInputModule,
-    MatNativeDateModule,
-  ],
   selector: 'app-profile',
   template: `
       <h2>Profile</h2>
