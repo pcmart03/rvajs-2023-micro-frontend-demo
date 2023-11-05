@@ -10,12 +10,12 @@ import { Observable, Subscription } from 'rxjs';
 })
 export class EntryComponent implements MfRemoteEntryComponent, OnInit, OnDestroy {
 
-  @Input({required: true}) listenFor = (eventType: string) => new Observable<MfEvent>();
+  @Input({required: true}) listenFor = (eventType: string[]) => new Observable<MfEvent>();
 
   private profileSavedSubscription!: Subscription;
 
   ngOnInit(): void {
-    this.profileSavedSubscription = this.listenFor("profileSaved").subscribe((_event) => {
+    this.profileSavedSubscription = this.listenFor(["profileSaved"]).subscribe((_event) => {
       console.log(_event)
     })
   }
