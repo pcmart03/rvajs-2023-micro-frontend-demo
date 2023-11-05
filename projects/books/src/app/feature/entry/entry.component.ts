@@ -1,5 +1,5 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import { MfDispatchFn, MfEvent, MfListenForFn, MfRemoteEntryComponent } from "../../../../../../dist/event-bus/lib/interfaces";
+import { MfEvent, MfRemoteEntryComponent } from "../../../../../../dist/event-bus/lib/interfaces";
 import { Observable, Subscription } from 'rxjs';
 
 @Component({
@@ -20,6 +20,6 @@ export class EntryComponent implements MfRemoteEntryComponent, OnInit, OnDestroy
     })
   }
   ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
+    this.profileSavedSubscription.unsubscribe();
   }
 }

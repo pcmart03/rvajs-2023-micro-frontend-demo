@@ -10,7 +10,7 @@
       <app-remote remote="profile" [dispatch]="eventBus.dispatch"/>
     </section>
     <section class="container">
-      <app-remote remote="books"/>
+      <app-remote remote="books" [listenFor]="eventBus.subscribeToEvents(['profileSaved'])"></app-remote>
     </section>
   </main>
   <router-outlet></router-outlet>
