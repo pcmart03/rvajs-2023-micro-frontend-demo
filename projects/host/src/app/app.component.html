@@ -10,7 +10,9 @@
       <app-remote remote="profile" [dispatch]="eventBus.dispatch"/>
     </section>
     <section class="container">
-      <app-remote remote="books" [listenFor]="eventBus.subscribeToEvents"></app-remote>
+      <div class="container-books-remote">
+        <app-remote remote="books" [listenFor]="eventBus.subscribeToEvents"></app-remote>
+      </div>
     </section>
   </main>
   <router-outlet></router-outlet>
