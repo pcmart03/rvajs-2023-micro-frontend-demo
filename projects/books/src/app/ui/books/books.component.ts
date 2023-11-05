@@ -1,8 +1,7 @@
 import { DataSource } from '@angular/cdk/collections';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ReplaySubject, Observable } from 'rxjs';
 import { Book } from '../../interfaces/book.interface';
-import { BOOKS_DATA } from '../../data/books';
 
 @Component({
   selector: 'app-books',
@@ -11,10 +10,13 @@ import { BOOKS_DATA } from '../../data/books';
 })
 export class BooksComponent {
 
-  displayedColumns: string[] = ['name', 'genre', 'year'];
-  dataToDisplay = [...BOOKS_DATA];
+  public displayedColumns: string[] = ['name', 'genre', 'year'];
+  public dataSource: BooksDataSource = new BooksDataSource([]);
 
-  dataSource = new BooksDataSource(this.dataToDisplay);
+  @Input()
+  set books(data: Array<Book>) {
+    this.dataSource = new BooksDataSource(data);
+  }
 
 }
 
