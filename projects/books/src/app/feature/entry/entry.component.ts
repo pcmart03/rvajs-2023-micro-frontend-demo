@@ -1,8 +1,9 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import { MfEvent, MfRemoteEntryComponent } from "../../../../../../dist/event-bus/lib/interfaces";
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subscription, switchMap } from 'rxjs';
 import { Book } from '../../interfaces/book.interface';
 import { BOOKS_DATA } from '../../data/books';
+import { ApiService } from '../../data-access/api-service/api.service';
 
 @Component({
   selector: 'app-entry',
@@ -18,10 +19,15 @@ export class EntryComponent implements MfRemoteEntryComponent, OnInit, OnDestroy
 
   private profileSavedSubscription!: Subscription;
 
+  constructor(private apiService: ApiService) {}
+
   ngOnInit(): void {
-    this.profileSavedSubscription = this.listenFor(["profileSaved"]).subscribe((_event) => {
-      this.booksData = [...BOOKS_DATA];
-      
+    this.profileSavedSubscription = this.listenFor(["profileSaved"]).pipe(
+      // restart counter on every click
+      switchMap(() => this.apiService.getProfile())
+    ).subscribe((_event) => {
+      let profile: any = JSON.parse(_event);
+      this.booksData = BOOKS_DATA.filter(book => book.genre === profile.favoriteGenre);
     })
   }
   ngOnDestroy(): void {
