@@ -3,7 +3,7 @@
     <!-- Name Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let book">{{book.name}}</td>
+      <td mat-cell *matCellDef="let book" (click)="selectBook(book.id)" class="book-name-cell">{{book.name}}</td>
     </ng-container>
   
     <!-- Genre Column -->
@@ -14,7 +14,7 @@
 
     <ng-container matColumnDef="year">
         <th mat-header-cell *matHeaderCellDef>Year</th>
-        <td mat-cell *matCellDef="let book">{{book.year}}</td>
+        <td mat-cell *matCellDef="let book">{{book.year | date}}</td>
       </ng-container>
   
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
