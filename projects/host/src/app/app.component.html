@@ -14,6 +14,11 @@
         <app-remote remote="books" [listenFor]="eventBus.subscribeToEvents"></app-remote>
       </div>
     </section>
+    <section class="container">
+      <div class="container-selected-remote">
+        <app-remote remote="selected"></app-remote>
+      </div>
+    </section>
   </main>
   <router-outlet></router-outlet>
 

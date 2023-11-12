@@ -1,4 +1,5 @@
 {
 	"profile": "http://localhost:4201/remoteEntry.js",
-	"books": "http://localhost:4202/remoteEntry.js"
+	"books": "http://localhost:4202/remoteEntry.js",
+	"selected": "http://localhost:4203/remoteEntry.js"
 }

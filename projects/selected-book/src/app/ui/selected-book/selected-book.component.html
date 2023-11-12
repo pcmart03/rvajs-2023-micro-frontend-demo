@@ -1,0 +1,3 @@
+<mat-card *ngIf="book$ | async as book" class="selected-book-card">
+    <pre>{{book | json}}</pre>
+</mat-card>

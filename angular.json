@@ -360,6 +360,146 @@
 					}
 				}
 			}
-		}
+		},
+		"selected-book": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"root": "projects/selected-book",
+			"sourceRoot": "projects/selected-book/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/selected-book",
+						"index": "projects/selected-book/src/index.html",
+						"main": "projects/selected-book/src/main.ts",
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "projects/selected-book/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/selected-book/src/favicon.ico",
+							"projects/selected-book/src/assets"
+						],
+						"styles": [
+							"projects/selected-book/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/selected-book/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "2kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/selected-book/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "selected-book:build:production",
+							"extraWebpackConfig": "projects/selected-book/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "selected-book:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4203,
+						"publicHost": "http://localhost:4203",
+						"extraWebpackConfig": "projects/selected-book/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "selected-book:build",
+						"extraWebpackConfig": "projects/selected-book/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
+						"tsConfig": "projects/selected-book/tsconfig.spec.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/selected-book/src/favicon.ico",
+							"projects/selected-book/src/assets"
+						],
+						"styles": [
+							"projects/selected-book/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+    },
+    "book-data": {
+      "projectType": "library",
+      "root": "projects/book-data",
+      "sourceRoot": "projects/book-data/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/book-data/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/book-data/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/book-data/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/book-data/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    }
 	}
 }

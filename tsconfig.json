@@ -5,6 +5,9 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "paths": {
+      "book-data": [
+        "dist/book-data"
+      ],
       "event-bus": [
         "dist/event-bus"
       ]
