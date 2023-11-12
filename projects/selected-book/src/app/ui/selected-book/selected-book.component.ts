@@ -1,7 +1,7 @@
 import {Component, inject} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {map} from "rxjs";
-import {BOOKS_DATA} from "book-data";
+import {BOOKS_DATA} from "dist/shared-data";
 
 @Component({
   selector: 'app-selected-book',

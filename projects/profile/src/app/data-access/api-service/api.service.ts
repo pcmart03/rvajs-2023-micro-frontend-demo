@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Profile} from "../../interfaces/profile.interface";
+import { Profile } from 'dist/shared-data';
 import { Observable, of} from "rxjs";
 
 @Injectable({

@@ -1,2 +1,2 @@
-export * from "book-data";
+export * from "shared-data";
 

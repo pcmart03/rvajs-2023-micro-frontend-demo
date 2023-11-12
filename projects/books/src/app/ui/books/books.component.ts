@@ -1,8 +1,8 @@
 import { DataSource } from '@angular/cdk/collections';
 import {Component, inject, Input} from '@angular/core';
 import { ReplaySubject, Observable } from 'rxjs';
-import { Book } from '../../interfaces/book.interface';
 import {ActivatedRoute, Router} from "@angular/router";
+import { Book } from 'dist/shared-data';
 
 @Component({
   selector: 'app-books',

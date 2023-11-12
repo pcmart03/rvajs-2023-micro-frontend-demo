@@ -1,9 +1,8 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, inject, Output} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {ApiService} from "../../data-access/api-service/api.service";
-import {Profile} from "../../interfaces/profile.interface";
 import {take} from "rxjs";
-import {genres} from "../../interfaces/genre.type";
+import { genres, Profile } from 'dist/shared-data';
 
 @Component({
   selector: 'app-profile',

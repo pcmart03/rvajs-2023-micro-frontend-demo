@@ -1,4 +1,4 @@
-import {Genre} from "../../../../profile/src/app/interfaces/genre.type";
+import {Genre} from "../types/genre.type";
 
 export interface Profile {
   userName: string;

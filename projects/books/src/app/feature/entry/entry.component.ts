@@ -1,9 +1,8 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import { MfEvent, MfRemoteEntryComponent } from "../../../../../../dist/event-bus/lib/interfaces";
 import { Observable, Subscription, switchMap } from 'rxjs';
-import { Book } from '../../interfaces/book.interface';
-import { BOOKS_DATA } from '../../data/books';
 import { ApiService } from '../../data-access/api-service/api.service';
+import { BOOKS_DATA, Book } from 'dist/shared-data';
 
 @Component({
   selector: 'app-entry',
