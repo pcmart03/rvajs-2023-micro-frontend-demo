@@ -1,2 +1,2 @@
-export * from "shared-data";
+export * from "dist/shared-data";
 

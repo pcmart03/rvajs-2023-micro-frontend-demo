@@ -1,5 +1,5 @@
 import {Component, inject} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {map} from "rxjs";
 import {BOOKS_DATA} from "dist/shared-data";
 
@@ -10,6 +10,7 @@ import {BOOKS_DATA} from "dist/shared-data";
 })
 export class SelectedBookComponent {
   private route = inject(ActivatedRoute);
+  private router = inject(Router);
 
   book$ = this.route.queryParamMap.pipe(
     map(params => {
@@ -17,4 +18,8 @@ export class SelectedBookComponent {
       return selectedId ? BOOKS_DATA.find(({id}) => parseInt(selectedId) === id ) : null;
     })
   )
+
+  closeBook() {
+    this.router.navigate(['.'], {relativeTo: this.route, queryParams: {}})
+  }
 }

@@ -1,3 +1,19 @@
 <mat-card *ngIf="book$ | async as book" class="selected-book-card">
-    <pre>{{book | json}}</pre>
+    <div class="selected-book-control-row">
+        <button mat-stroked-button (click)="closeBook()">Close</button>
+    </div>
+    <h3>{{book.name}}</h3>
+    <div class="selected-book-info">
+        <dl>
+            <dt>Author</dt>
+            <dd>{{book.author}}</dd>
+        </dl>
+        <dl>
+            <dt>Genre</dt>
+            <dd>{{book.genre}}</dd>
+        </dl><dl>
+            <dt>Publication Date</dt>
+            <dd>{{book.year | date}}</dd>
+        </dl>
+    </div>
 </mat-card>

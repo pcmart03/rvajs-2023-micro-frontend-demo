@@ -5,11 +5,12 @@
       <h1 class="app-name">RVA.js Microfrontends</h1>
     </div>
   </host-header-content>
-  <main>
+  <main class="app-main">
     <section class="container">
       <app-remote remote="profile" [dispatch]="eventBus.dispatch"/>
     </section>
     <section class="container">
+      <h2>Recommendations</h2>
       <div class="container-books-remote">
         <app-remote remote="books" [listenFor]="eventBus.subscribeToEvents"></app-remote>
       </div>

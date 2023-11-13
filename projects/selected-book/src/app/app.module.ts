@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { EntryComponent } from './feature/entry/entry.component';
 import { SelectedBookComponent } from './ui/selected-book/selected-book.component';
 import {MatCardModule} from "@angular/material/card";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import {MatCardModule} from "@angular/material/card";
   ],
   imports: [
     BrowserModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
