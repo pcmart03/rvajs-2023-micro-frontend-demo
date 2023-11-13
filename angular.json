@@ -281,6 +281,7 @@
 							"projects/books/src/assets"
 						],
 						"styles": [
+							"@angular/material/prebuilt-themes/indigo-pink.css",
 							"projects/books/src/styles.scss"
 						],
 						"scripts": [],
@@ -354,6 +355,7 @@
 							"projects/books/src/assets"
 						],
 						"styles": [
+							"@angular/material/prebuilt-themes/indigo-pink.css",
 							"projects/books/src/styles.scss"
 						],
 						"scripts": []
@@ -388,6 +390,7 @@
 							"projects/selected-book/src/assets"
 						],
 						"styles": [
+							"@angular/material/prebuilt-themes/indigo-pink.css",
 							"projects/selected-book/src/styles.scss"
 						],
 						"scripts": [],
