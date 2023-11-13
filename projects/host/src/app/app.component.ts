@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {EventBusService} from 'event-bus'
 
 @Component({
@@ -6,7 +6,12 @@ import {EventBusService} from 'event-bus'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   eventBus= inject(EventBusService);
   title = 'host';
+
+  ngOnInit() {
+    // clearing the profile on refresh so we don't show a selected book at the start.
+    sessionStorage.clear()
+  }
 }
